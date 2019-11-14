@@ -9,9 +9,8 @@ Expense = namedtuple('Expense', 'expense_name amount')
 def sum_expenses(expenses, min_amount=0):
     aggregated_expenses = defaultdict(int)
     for expense in expenses:
-        amount = expense.amount
-        if amount >= min_amount:
-            aggregated_expenses[expense.expense_name] += amount
+        if expense.amount >= min_amount:
+            aggregated_expenses[expense.expense_name] += expense.amount
     return aggregated_expenses
 
 
