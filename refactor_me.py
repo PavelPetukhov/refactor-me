@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 
+import math
 from collections import namedtuple, defaultdict
 from operator import itemgetter
 
+EPSILON = 1e-7
 Expense = namedtuple('Expense', 'expense_name amount')
 
 
 def sum_expenses(expenses, min_amount=0):
     aggregated_expenses = defaultdict(int)
     for expense in expenses:
-        if expense.amount >= min_amount:
+        if expense.amount > min_amount or math.isclose(expense.amount, min_amount, abs_tol=EPSILON):
             aggregated_expenses[expense.expense_name.lower()] += expense.amount
     return aggregated_expenses
 
