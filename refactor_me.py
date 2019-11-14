@@ -3,7 +3,7 @@
 from collections import namedtuple, defaultdict
 from operator import itemgetter
 
-Expense = namedtuple('Expense', ('expense_name', 'amount'))
+Expense = namedtuple('Expense', 'expense_name amount')
 
 
 def sum_expenses(expenses, min_amount=0):
