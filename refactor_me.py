@@ -10,7 +10,7 @@ def sum_expenses(expenses, min_amount=0):
     aggregated_expenses = defaultdict(int)
     for expense in expenses:
         if expense.amount >= min_amount:
-            aggregated_expenses[expense.expense_name.lower()] += expense.amount
+            aggregated_expenses[expense.expense_name] += expense.amount
     return aggregated_expenses
 
 
